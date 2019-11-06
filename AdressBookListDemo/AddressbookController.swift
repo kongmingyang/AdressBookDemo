@@ -31,8 +31,7 @@ class AddressbookController: UIViewController {
         var humans = [Human]()
         
         for name in names {
-            let human = Human.init()
-            human.name = name
+            var human = Human.init(name: name)
             humans.append(human)
         }
         
@@ -54,7 +53,7 @@ class AddressbookController: UIViewController {
         for human in humans {
             // 根据 person 的 name 判断应该放入哪个数组里
             // 返回值就是在 indexedCollation.sectionTitles 里对应的下标
-            let sectionNumber = self.locationCollection.section(for: human, collationStringSelector: #selector(getter: human.name))
+            let sectionNumber = self.locationCollection.section(for: human, collationStringSelector: #selector(getter: Human.name))
             //添加到对应一堆数组中
             self.dataArray[sectionNumber].append(human)
         }
@@ -62,7 +61,7 @@ class AddressbookController: UIViewController {
         //对每个已经分类的一位数组里的数据进行排序，如果仅仅只是分类可以不用这一步
         for i in 0 ..< indexCount {
             //排序结果数组
-            let sortedPersonArray = self.locationCollection.sortedArray(from: self.dataArray[i], collationStringSelector: #selector(getter: Human.name))
+            let sortedPersonArray = self.locationCollection.sortedArray(from: self.dataArray[i], collationStringSelector:#selector( getter: Human.name))
             //替换原来数组
             self.dataArray[i] = sortedPersonArray as![Human]
             
@@ -91,7 +90,7 @@ class AddressbookController: UIViewController {
         for i in tempArray.reversed() {
             dataArray.remove(at: i)
         }
-        self.tableView = UITableView.init()
+        self.tableView = UITableView.init(frame: UIScreen.main.bounds)
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.tableView.separatorStyle = .none
@@ -100,8 +99,7 @@ class AddressbookController: UIViewController {
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView .register(UITableViewCell.self, forCellReuseIdentifier: tableVeiwCell)
-        self.tableView .whc_AutoSize(left: 0, top: 0, right: 0, bottom: 0)
-
+       
         
         
     }
@@ -135,4 +133,12 @@ extension AddressbookController:UITableViewDelegate,UITableViewDataSource {
         
 }
 
+}
+
+class Human:NSObject  {
+    @objc var name : String?
+
+    init(name:String) {
+        self.name = name;
+    }
 }

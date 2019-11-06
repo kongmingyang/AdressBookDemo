@@ -15,6 +15,7 @@
 		F51FAEEE23717C170092509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51FAEEC23717C170092509F /* LaunchScreen.storyboard */; };
 		F51FAEF923717C170092509F /* AdressBookListDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FAEF823717C170092509F /* AdressBookListDemoTests.swift */; };
 		F51FAF0423717C170092509F /* AdressBookListDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FAF0323717C170092509F /* AdressBookListDemoUITests.swift */; };
+		F51FAF1223717C280092509F /* AddressbookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51FAF1123717C280092509F /* AddressbookController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F51FAEFF23717C170092509F /* AdressBookListDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdressBookListDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51FAF0323717C170092509F /* AdressBookListDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressBookListDemoUITests.swift; sourceTree = "<group>"; };
 		F51FAF0523717C170092509F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51FAF1123717C280092509F /* AddressbookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressbookController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				F51FAEE123717C100092509F /* AppDelegate.swift */,
 				F51FAEE323717C100092509F /* SceneDelegate.swift */,
 				F51FAEE523717C100092509F /* ViewController.swift */,
+				F51FAF1123717C280092509F /* AddressbookController.swift */,
 				F51FAEE723717C100092509F /* Main.storyboard */,
 				F51FAEEA23717C170092509F /* Assets.xcassets */,
 				F51FAEEC23717C170092509F /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				F51FAEE623717C100092509F /* ViewController.swift in Sources */,
 				F51FAEE223717C100092509F /* AppDelegate.swift in Sources */,
 				F51FAEE423717C100092509F /* SceneDelegate.swift in Sources */,
+				F51FAF1223717C280092509F /* AddressbookController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
