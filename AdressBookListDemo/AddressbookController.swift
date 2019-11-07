@@ -31,7 +31,7 @@ class AddressbookController: UIViewController {
         var humans = [Human]()
         
         for name in names {
-            var human = Human.init(name: name)
+           let human = Human.init(name: name)
             humans.append(human)
         }
         
@@ -74,13 +74,9 @@ class AddressbookController: UIViewController {
             if array.count == 0{
                 tempArray.append(i)
             }else{
-            
-                    
-                  self.sectionTitleArr.append(self.locationCollection.sectionTitles[i])
-                
              
-                
-                
+                  self.sectionTitleArr.append(self.locationCollection.sectionTitles[i])
+               
             }
             
             
@@ -92,6 +88,11 @@ class AddressbookController: UIViewController {
         }
         self.tableView = UITableView.init(frame: UIScreen.main.bounds)
         self.tableView.delegate = self;
+        self.tableView.sectionIndexColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        //修改背景色
+        self.tableView.sectionIndexBackgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        //修改点击时的颜色
+        self.tableView.sectionIndexTrackingBackgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         self.tableView.dataSource = self;
         self.tableView.separatorStyle = .none
         self.view.addSubview(self.tableView)
@@ -108,6 +109,7 @@ class AddressbookController: UIViewController {
 
 }
 extension AddressbookController:UITableViewDelegate,UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionTitleArr.count
     }
@@ -119,6 +121,7 @@ extension AddressbookController:UITableViewDelegate,UITableViewDataSource {
         return self.sectionTitleArr[section]
     }
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        
         return self.sectionTitleArr
 }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
